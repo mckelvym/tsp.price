@@ -1,0 +1,7 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: tsp.price.packages
+recipeList:
+  - org.openrewrite.java.ChangePackage:
+      oldPackageName: scholarshare.price
+      newPackageName: tsp.price
