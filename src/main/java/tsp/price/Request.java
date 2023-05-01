@@ -49,8 +49,7 @@ public class Request {
     public String toUriTemplate() {
         checkValid();
         final String serviceUrl = properties.getServiceUrl();
-        final StringBuilder queryBuilder = new StringBuilder(serviceUrl);
-        return queryBuilder.toString();
+        return serviceUrl;
     }
 
     /**

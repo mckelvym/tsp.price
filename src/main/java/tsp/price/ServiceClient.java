@@ -57,7 +57,7 @@ public class ServiceClient {
 
         final URI uri = new DefaultUriBuilderFactory().expand(
                 p_Request.toUriTemplate(), p_Request.toUriVariables());
-        log.info("Connect to " + uri.toString());
+        log.info("Connect to " + uri);
 
         ResponseEntity<Response> response = restTemplate.getForEntity(uri, Response.class);
 
@@ -112,16 +112,16 @@ public class ServiceClient {
                 final Observation observation = Observation.builder().date(date)
                         .value(values).build();
                 return Observations.builder()
-                        .observations(Arrays.asList(observation)).build();
+                        .observations(Collections.singletonList(observation)).build();
             }
         } catch (final MalformedURLException e) {
-            final String message = "Unable to get daily entries".formatted();
+            final String message = "Unable to get daily entries";
             throw new RestClientException(message, e);
         } catch (final IOException e) {
-            final String message = "Unable to get daily entries".formatted();
+            final String message = "Unable to get daily entries";
             throw new RestClientException(message, e);
         } catch (final ParseException e) {
-            final String message = "Unable to get daily entries".formatted();
+            final String message = "Unable to get daily entries";
             throw new RestClientException(message, e);
         }
         return Observations.builder().build();

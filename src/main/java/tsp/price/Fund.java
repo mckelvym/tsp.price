@@ -54,7 +54,7 @@ public enum Fund {
     },
     ;
 
-    private static Map<String, Fund> map = Maps.newLinkedHashMap();
+    private static final Map<String, Fund> map = Maps.newLinkedHashMap();
 
     static {
         getOrdered().forEach(fund ->

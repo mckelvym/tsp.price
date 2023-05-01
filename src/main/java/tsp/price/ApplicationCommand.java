@@ -38,6 +38,27 @@ public class ApplicationCommand implements Callable<Integer> {
      */
     private static final Logger log = LoggerFactory
             .getLogger(ApplicationCommand.class);
+    /**
+     * @since Apr 24, 2023
+     */
+    @Autowired
+    private ConfigurableApplicationContext context;
+    /**
+     * @since Apr 24, 2023
+     */
+    @Option(
+            names = {"-m", "--merge-file"},
+            description = "Merge with past entries in this file.",
+            paramLabel = "merge-file.csv")
+    private String mergeFile;
+    /**
+     * @since Apr 24, 2023
+     */
+    @Option(
+            names = {"-o", "--out-file"},
+            description = "Output to this file, possibly with merges included (if specified)",
+            paramLabel = "out-file.csv")
+    private String outFile;
 
     /**
      * Suppress normal logging from httpclient and http headers traffic.
@@ -66,30 +87,6 @@ public class ApplicationCommand implements Callable<Integer> {
                 "org.apache.commons.logging.simplelog.log.org.apache.http.headers",
                 "ERROR");
     }
-
-    /**
-     * @since Apr 24, 2023
-     */
-    @Autowired
-    private ConfigurableApplicationContext context;
-
-    /**
-     * @since Apr 24, 2023
-     */
-    @Option(
-            names = {"-m", "--merge-file"},
-            description = "Merge with past entries in this file.",
-            paramLabel = "merge-file.csv")
-    private String mergeFile;
-
-    /**
-     * @since Apr 24, 2023
-     */
-    @Option(
-            names = {"-o", "--out-file"},
-            description = "Output to this file, possibly with merges included (if specified)",
-            paramLabel = "out-file.csv")
-    private String outFile;
 
     @Override
     public Integer call() {

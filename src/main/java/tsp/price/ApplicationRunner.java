@@ -19,15 +19,6 @@ public class ApplicationRunner implements CommandLineRunner, ExitCodeGenerator {
      * @since Apr 24, 2023
      */
     private final ApplicationCommand command;
-
-    /**
-     * Exit code of the application
-     *
-     * @author mckelvym
-     * @since Apr 24, 2023
-     */
-    private int exitCode;
-
     /**
      * Auto-configured to inject PicocliSpringFactory
      *
@@ -35,6 +26,13 @@ public class ApplicationRunner implements CommandLineRunner, ExitCodeGenerator {
      * @since Apr 24, 2023
      */
     private final IFactory factory;
+    /**
+     * Exit code of the application
+     *
+     * @author mckelvym
+     * @since Apr 24, 2023
+     */
+    private int exitCode;
 
     /**
      * @param command
