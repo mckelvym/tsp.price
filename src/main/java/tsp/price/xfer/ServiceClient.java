@@ -1,6 +1,17 @@
 package tsp.price.xfer;
 
 import com.google.common.collect.Maps;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +20,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
 import tsp.price.data.DataEntry;
 import tsp.price.data.Fund;
 import tsp.price.data.Observation;

@@ -2,13 +2,12 @@ package tsp.price.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.common.collect.ComparisonChain;
+import java.time.LocalDate;
+import java.util.Map;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-import java.time.LocalDate;
-import java.util.Map;
 
 /**
  * A single observation entry.

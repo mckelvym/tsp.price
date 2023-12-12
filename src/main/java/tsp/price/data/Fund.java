@@ -1,7 +1,6 @@
 package tsp.price.data;
 
 import com.google.common.collect.Maps;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;

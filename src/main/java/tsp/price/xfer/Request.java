@@ -1,17 +1,16 @@
 package tsp.price.xfer;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.common.collect.Maps;
+import java.util.Map;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Map;
 import tsp.price.config.Properties;
-
-import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Used to make a request. Loads default values from beans by scanning

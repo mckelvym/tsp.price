@@ -1,10 +1,9 @@
 package tsp.price.xfer;
 
-import lombok.Builder;
-import lombok.Data;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
 import tsp.price.data.Observation;
 
 /**
