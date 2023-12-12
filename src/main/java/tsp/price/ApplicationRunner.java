@@ -15,21 +15,18 @@ public class ApplicationRunner implements CommandLineRunner, ExitCodeGenerator {
     /**
      * PicoCLI command to run
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private final ApplicationCommand command;
     /**
      * Auto-configured to inject PicocliSpringFactory
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private final IFactory factory;
     /**
      * Exit code of the application
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private int exitCode;
@@ -52,7 +49,7 @@ public class ApplicationRunner implements CommandLineRunner, ExitCodeGenerator {
     }
 
     @Override
-    public void run(final String... args) throws Exception {
+    public void run(final String... args) {
         exitCode = new CommandLine(command, factory).execute(args);
     }
 }

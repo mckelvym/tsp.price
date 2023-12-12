@@ -34,11 +34,6 @@ import tsp.price.data.Observations;
 @Service
 public class ServiceClient {
     /**
-     * Used to get the date for today
-     */
-    private static final String TODAY_MATCH_STRING = "Daily as of";
-
-    /**
      * @since Apr 24, 2023
      */
     private static final Logger log = LoggerFactory
@@ -121,13 +116,7 @@ public class ServiceClient {
                 return Observations.builder()
                         .observations(Collections.singletonList(observation)).build();
             }
-        } catch (final MalformedURLException e) {
-            final String message = "Unable to get daily entries";
-            throw new RestClientException(message, e);
-        } catch (final IOException e) {
-            final String message = "Unable to get daily entries";
-            throw new RestClientException(message, e);
-        } catch (final ParseException e) {
+        } catch (final IOException | ParseException e) {
             final String message = "Unable to get daily entries";
             throw new RestClientException(message, e);
         }

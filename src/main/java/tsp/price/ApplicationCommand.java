@@ -36,7 +36,6 @@ public class ApplicationCommand implements Callable<Integer> {
     /**
      * Class logger
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private static final Logger log = LoggerFactory
@@ -69,9 +68,7 @@ public class ApplicationCommand implements Callable<Integer> {
      * @since Apr 24, 2023
      */
     private static void disableNoisyLogging() {
-        /**
-         * HTTP traffic log will be really noisy without this...
-         */
+        // HTTP traffic log will be really noisy without this...
         java.util.logging.Logger.getLogger("org.apache.http.wire")
                 .setLevel(java.util.logging.Level.FINEST);
         java.util.logging.Logger.getLogger("org.apache.http.headers")
@@ -108,7 +105,7 @@ public class ApplicationCommand implements Callable<Integer> {
             elements.add(date);
             final List<Fund> ordered = new ArrayList<>(Fund.getOrdered());
             ordered.stream().map(o.getValue()::get)
-                    .map(v -> String.format("%.4f", v)).forEach(elements::add);
+                    .map(v -> v != null? String.format("%.4f",  v.doubleValue()) : "-").forEach(elements::add);
 
             String delimiter = ", ";
             System.out.println(

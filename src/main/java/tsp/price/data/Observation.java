@@ -24,7 +24,6 @@ public class Observation implements Comparable<Observation> {
     /**
      * The observation timestamp.
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private final LocalDate date;

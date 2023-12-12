@@ -17,7 +17,6 @@ public class Observations implements Iterable<Observation> {
     /**
      * The collection of {@link Observation}
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private final List<Observation> observations;
