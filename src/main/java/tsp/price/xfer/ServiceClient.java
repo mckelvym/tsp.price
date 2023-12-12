@@ -1,4 +1,4 @@
-package tsp.price;
+package tsp.price.xfer;
 
 import com.google.common.collect.Maps;
 import org.slf4j.Logger;
@@ -17,6 +17,10 @@ import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import tsp.price.data.DataEntry;
+import tsp.price.data.Fund;
+import tsp.price.data.Observation;
+import tsp.price.data.Observations;
 
 /**
  * Makes requests and parses them.

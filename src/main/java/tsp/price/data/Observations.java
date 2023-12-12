@@ -1,4 +1,4 @@
-package tsp.price;
+package tsp.price.data;
 
 import lombok.Builder;
 import lombok.Data;

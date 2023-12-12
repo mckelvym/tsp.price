@@ -1,4 +1,4 @@
-package tsp.price;
+package tsp.price.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.google.common.collect.ComparisonChain;

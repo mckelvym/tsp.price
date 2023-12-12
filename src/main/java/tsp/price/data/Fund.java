@@ -1,4 +1,4 @@
-package tsp.price;
+package tsp.price.data;
 
 import com.google.common.collect.Maps;
 

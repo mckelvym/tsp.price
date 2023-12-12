@@ -1,4 +1,4 @@
-package tsp.price;
+package tsp.price.xfer;
 
 import com.google.common.collect.Maps;
 import lombok.Data;
@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
+import tsp.price.config.Properties;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

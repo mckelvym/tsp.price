@@ -19,6 +19,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.stream.Collectors;
+import tsp.price.data.Fund;
+import tsp.price.data.Observations;
+import tsp.price.xfer.Request;
+import tsp.price.xfer.ServiceClient;
 
 /**
  * PicoCLI command
