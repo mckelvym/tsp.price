@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import tsp.price.data.Observation;
 
 /**
@@ -14,5 +15,6 @@ import tsp.price.data.Observation;
  */
 @Data
 @Builder
+@EqualsAndHashCode(callSuper=false)
 public class Response extends LinkedHashMap<String, Map<String, Double>> implements Map<String, Map<String, Double>> {
 }

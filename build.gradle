@@ -9,9 +9,9 @@ plugins {
     id 'application'
     id 'java-library'
     id 'maven-publish'
-    id("io.freefair.lombok") version "8.0.1"
-    id 'com.google.cloud.tools.jib' version '3.3.1'
-    id 'org.openrewrite.rewrite' version '5.39.0'
+    id 'io.freefair.lombok' version "8.4"
+    id 'com.google.cloud.tools.jib' version '3.4.0'
+    id 'org.openrewrite.rewrite' version '6.5.12'
 }
 
 application {
@@ -26,19 +26,20 @@ repositories {
 }
 
 dependencies {
-    api 'org.springframework.boot:spring-boot-starter:3.0.5'
-    api 'org.springframework.boot:spring-boot-starter-web:3.0.5'
-    api 'org.springframework.boot:spring-boot-configuration-processor:3.0.5'
-    api 'org.projectlombok:lombok:1.18.26'
+    api 'org.springframework.boot:spring-boot-starter:3.2.0'
+    api 'org.springframework.boot:spring-boot-starter-web:3.2.0'
+    api 'org.springframework.boot:spring-boot-configuration-processor:3.2.0'
+    api 'org.projectlombok:lombok:1.18.30'
     api 'com.google.guava:guava:31.1-jre'
     api 'javax.annotation:jsr250-api:1.0'
     api 'org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.700'
     api 'info.picocli:picocli-spring-boot-starter:4.7.1'
     api 'net.sourceforge.htmlunit:htmlunit:2.65.1'
     api 'com.rometools:rome:2.1.0'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.5'
-    testImplementation 'org.glassfish.jaxb:jaxb-runtime:4.0.2'
-    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:1.18.0')
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.0'
+    testImplementation 'org.glassfish.jaxb:jaxb-runtime:4.0.4'
+    rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:2.5.3')
+    rewrite "org.glassfish.jaxb:jaxb-runtime:2.3.9"
     rewrite('org.openrewrite.recipe:rewrite-spring')
 }
 
@@ -87,14 +88,13 @@ jib {
 
 rewrite {
     activeRecipe(
-        'org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0',
+        'org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2',
         'org.openrewrite.java.migrate.guava.NoGuava',
         'org.openrewrite.java.migrate.UpgradeToJava17',
         'org.openrewrite.java.migrate.JavaVersion17',
-        'org.openrewrite.java.migrate.lombok.UpdateLombokToJava17',
         //'org.openrewrite.java.logging.log4j.ParameterizedLogging',
         'org.openrewrite.java.migrate.lang.StringFormatted',
-        'org.openrewrite.java.cleanup.FixStringFormatExpressions',
+        'org.openrewrite.java.RemoveUnusedImports',
         'tsp.price.packages'
     )
 }
