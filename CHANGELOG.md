@@ -17,6 +17,7 @@
     - org.glassfish.jaxb:jaxb-runtime:4.0.4
     - org.openrewrite.recipe:rewrite-recipe-bom:2.5.3
     - org.glassfish.jaxb:jaxb-runtime:2.3.9
+    - net.sourceforge.htmlunit:htmlunit:2.65.1 (removed)
 - Update rewrite recipes:
     - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_2
     - org.openrewrite.java.migrate.lombok.UpdateLombokToJava17 (removed)

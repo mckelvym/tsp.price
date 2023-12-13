@@ -34,7 +34,6 @@ dependencies {
     api 'javax.annotation:jsr250-api:1.0'
     api 'org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.700'
     api 'info.picocli:picocli-spring-boot-starter:4.7.1'
-    api 'net.sourceforge.htmlunit:htmlunit:2.65.1'
     api 'com.rometools:rome:2.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.2.0'
     testImplementation 'org.glassfish.jaxb:jaxb-runtime:4.0.4'
