@@ -2,6 +2,7 @@
 
 ## v1.1.0 (TBD)
 
+- Support for RSS export
 - Refactor classes separate packages
 
 ## v1.0.0 (2023-04-30)

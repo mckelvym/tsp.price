@@ -26,4 +26,14 @@ public class Properties {
      * @since Apr 24, 2023
      */
     private String serviceUrl;
+
+    /**
+     * @since Dec 12, 2023
+     */
+    private String repoUrl;
+
+    /**
+     * @since Dec 12, 2023
+     */
+    private String csvUrl;
 }

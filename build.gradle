@@ -35,6 +35,7 @@ dependencies {
     api 'org.eclipse.jdt:org.eclipse.jdt.annotation:2.2.700'
     api 'info.picocli:picocli-spring-boot-starter:4.7.1'
     api 'net.sourceforge.htmlunit:htmlunit:2.65.1'
+    api 'com.rometools:rome:2.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.0.5'
     testImplementation 'org.glassfish.jaxb:jaxb-runtime:4.0.2'
     rewrite platform('org.openrewrite.recipe:rewrite-recipe-bom:1.18.0')
@@ -81,7 +82,7 @@ jib {
     environment = [TZ:timezone]
     //format = 'OCI'
   }
-  
+
 }
 
 rewrite {
