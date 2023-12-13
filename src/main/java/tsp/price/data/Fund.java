@@ -1,7 +1,6 @@
-package tsp.price;
+package tsp.price.data;
 
 import com.google.common.collect.Maps;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,6 @@ import java.util.Optional;
  * @author mckelvym
  * @since Apr 24, 2023
  */
-@SuppressWarnings("javadoc")
 public enum Fund {
     C_FUND {
         @Override
@@ -58,9 +56,7 @@ public enum Fund {
 
     static {
         getOrdered().forEach(fund ->
-        {
-            map.put(fund.getDescription().toLowerCase(), fund);
-        });
+                map.put(fund.getDescription().toLowerCase(), fund));
     }
 
     /**
@@ -89,13 +85,9 @@ public enum Fund {
             String key = entry.getKey();
             Fund value = entry.getValue();
             if (string.contains(key)) {
-//				System.out.println(
-//						value + ": " + string + " contains " + key + " (1)");
                 return Optional.of(value);
             }
             if (key.contains(string)) {
-//				System.out.println(
-//						value + ": " + key + " contains " + string + " (2)");
                 return Optional.of(value);
             }
         }

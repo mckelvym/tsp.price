@@ -1,6 +1,17 @@
-package tsp.price;
+package tsp.price.xfer;
 
 import com.google.common.collect.Maps;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.text.ParseException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +20,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.DefaultUriBuilderFactory;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URI;
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import tsp.price.data.DataEntry;
+import tsp.price.data.Fund;
+import tsp.price.data.Observation;
+import tsp.price.data.Observations;
 
 /**
  * Makes requests and parses them.
@@ -26,11 +33,6 @@ import java.util.*;
  */
 @Service
 public class ServiceClient {
-    /**
-     * Used to get the date for today
-     */
-    private static final String TODAY_MATCH_STRING = "Daily as of";
-
     /**
      * @since Apr 24, 2023
      */
@@ -114,13 +116,7 @@ public class ServiceClient {
                 return Observations.builder()
                         .observations(Collections.singletonList(observation)).build();
             }
-        } catch (final MalformedURLException e) {
-            final String message = "Unable to get daily entries";
-            throw new RestClientException(message, e);
-        } catch (final IOException e) {
-            final String message = "Unable to get daily entries";
-            throw new RestClientException(message, e);
-        } catch (final ParseException e) {
+        } catch (final IOException | ParseException e) {
             final String message = "Unable to get daily entries";
             throw new RestClientException(message, e);
         }

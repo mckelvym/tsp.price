@@ -1,10 +1,9 @@
-package tsp.price;
-
-import lombok.Builder;
-import lombok.Data;
+package tsp.price.data;
 
 import java.util.Iterator;
 import java.util.List;
+import lombok.Builder;
+import lombok.Data;
 
 /**
  * Collection of {@link Observation}
@@ -18,7 +17,6 @@ public class Observations implements Iterable<Observation> {
     /**
      * The collection of {@link Observation}
      *
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     private final List<Observation> observations;

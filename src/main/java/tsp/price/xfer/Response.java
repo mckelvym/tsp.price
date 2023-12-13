@@ -1,10 +1,11 @@
-package tsp.price;
-
-import lombok.Builder;
-import lombok.Data;
+package tsp.price.xfer;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import tsp.price.data.Observation;
 
 /**
  * Collection of {@link Observation}
@@ -14,5 +15,6 @@ import java.util.Map;
  */
 @Data
 @Builder
+@EqualsAndHashCode(callSuper=false)
 public class Response extends LinkedHashMap<String, Map<String, Double>> implements Map<String, Map<String, Double>> {
 }

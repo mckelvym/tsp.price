@@ -7,6 +7,7 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.client.RestTemplate;
+import tsp.price.xfer.Request;
 
 /**
  * Downloads TSP share price information
@@ -20,7 +21,6 @@ public class Application {
      * @param args
      * @since Apr 24, 2023
      */
-    @SuppressWarnings("resource")
     public static void main(final String[] args) {
         System.setProperty("spring.main.allow-bean-definition-overriding",
                 "true");

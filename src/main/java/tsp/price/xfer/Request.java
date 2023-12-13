@@ -1,16 +1,16 @@
-package tsp.price;
+package tsp.price.xfer;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.collect.Maps;
+import java.util.Map;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Map;
-
-import static com.google.common.base.Preconditions.checkNotNull;
+import tsp.price.config.Properties;
 
 /**
  * Used to make a request. Loads default values from beans by scanning
@@ -25,7 +25,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 @EqualsAndHashCode
 public class Request {
     /**
-     * @author mckelvym
      * @since Apr 24, 2023
      */
     @Autowired
@@ -48,8 +47,7 @@ public class Request {
      */
     public String toUriTemplate() {
         checkValid();
-        final String serviceUrl = properties.getServiceUrl();
-        return serviceUrl;
+        return properties.getServiceUrl();
     }
 
     /**
@@ -60,7 +58,6 @@ public class Request {
      */
     public Map<String, Object> toUriVariables() {
         checkValid();
-        final Map<String, Object> map = Maps.newHashMap();
-        return map;
+        return Maps.newHashMap();
     }
 }
